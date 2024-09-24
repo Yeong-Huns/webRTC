@@ -10,6 +10,9 @@ socket.addEventListener("open", ()=> {
 
 socket.addEventListener("message", (message)=> {
 	console.log(`수신한 메세지: ${ message.data }`);
+	const li = document.createElement("li");
+	li.innerText = message.data;
+	messageList.appendChild(li);
 })
 
 socket.addEventListener("close", ()=> {
